@@ -34,9 +34,10 @@ final class Universe
             throw new Exception('Your spaceship is not an instance of \CRC\Interstellar\Ship.');
         }
         
-        $this->spaceShip = new $shipClass($homeX, $homeY, $homeZ, $this);
         // decide where we drop off at
         $this->home = new Planet($homeX, $homeY, $homeZ);
+        // generate our ship
+        $this->spaceShip = new $shipClass($homeX, $homeY, $homeZ, $this, $this->home);
         // generate the initial asteroids
         $this->generateAsteroids();
         // generate the wormholes
@@ -118,7 +119,7 @@ final class Universe
         if (gettimeofday(true) > $this->startTime + $this->universeRunTime) {
             echo "Time's up.\r\n";
             echo "Your ".$this->spaceShip->getCargo()." units of cargo were delivered late. Penalty of 500 credits per sale.";
-            $this->spaceShip->sellCargo($this->home, true);
+            $this->spaceShip->sellCargo();
             echo "Your balance is ".$this->spaceShip->getBalance()." credits.";
             exit();
         }
@@ -126,7 +127,7 @@ final class Universe
         if ($this->home->getX() == $this->spaceShip->getX() &&
             $this->home->getY() == $this->spaceShip->getY() &&
             $this->home->getZ() == $this->spaceShip->getZ()) {
-                if (true === $this->spaceShip->sellCargo($this->home)) {
+                if (true === $this->spaceShip->sellCargo()) {
                     echo "We are at our home planet. Successfully sold cargo for current balance of ".$this->spaceShip->getBalance()."\r\n";
                 } else {
                     echo "We are at our home planet, but we had no cargo to sell.";

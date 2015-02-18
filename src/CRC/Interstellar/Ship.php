@@ -12,17 +12,19 @@ abstract class Ship
     private $currentY;
     private $currentZ;
     private $universe;
+    private $home;
     private $cargo   = 0;
     private $balance = 0;
 
     public abstract function navigate();
 
-    final public function __construct($x, $y, $z, Universe $universe)
+    final public function __construct($x, $y, $z, Universe $universe, Planet $home)
     {
         $this->currentX = $x;
         $this->currentY = $y;
         $this->currentZ = $z;
         $this->universe = $universe;
+        $this->home     = $home;
         $this->init();
     }
 
@@ -117,11 +119,11 @@ abstract class Ship
         }
     }
     
-    public function sellCargo(Planet $home, $remote = false)
+    public function sellCargo()
     {
-        if ($this->currentX == $home->getX() &&
-            $this->currentY == $home->getY() &&
-            $this->currentZ == $home->getZ()) {
+        if ($this->currentX == $this->home->getX() &&
+            $this->currentY == $this->home->getY() &&
+            $this->currentZ == $this->home->getZ()) {
                 if ($this->cargo > 0) {
                     $this->balance += $this->cargo * 1000;
                     $this->cargo    = 0;
@@ -130,16 +132,12 @@ abstract class Ship
                     return false;
                 }
         } else {
-            if (true === $remote) {
-                if ($this->cargo > 0) {
-                    $this->balance += $this->cargo * 500;
-                    $this->cargo    = 0;
-                    return true;
-                } else {
-                    return false;
-                }
+            if ($this->cargo > 0) {
+                $this->balance += $this->cargo * 500;
+                $this->cargo    = 0;
+                return true;
             } else {
-                throw new Exception("The planet is not at the same location as the ship.");
+                return false;
             }
         }
     }
