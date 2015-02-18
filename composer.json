@@ -1,0 +1,23 @@
+{
+    "name"        : "crc/interstellarmining",
+    "description" : "CRC Interstellar Mining Corp Challenge.",
+    "version"     : "2015.02.00",
+    "authors"     : [
+        {
+            "name"  : "Matt D",
+            "role"  : "Developer"
+        },
+        {
+            "name"  : "Tim P",
+            "role"  : "Developer"
+        }
+    ],
+    "require" : {
+        "php"          : ">= 5.4"
+    },
+    "autoload" : {
+        "classmap": [
+            "src/"
+        ]
+    }
+}
