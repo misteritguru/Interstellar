@@ -15,6 +15,10 @@ abstract class Ship
     private $home;
     private $cargo   = 0;
     private $balance = 0;
+    
+    // information about the ship's programmer
+    protected $authorName  = null;
+    protected $autherEmail = null;
 
     public abstract function navigate();
 

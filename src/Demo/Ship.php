@@ -4,6 +4,9 @@ namespace Demo;
 
 class Ship extends \CRC\Interstellar\Ship
 {
+    protected $authorName  = "JoinCRC Team";
+    protected $autherEmail = "php@joincrc.com";
+    
     protected function init()
     {
         // put any initialisation code you need here, this is called by the constructor of the parent class for your convenience

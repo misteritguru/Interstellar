@@ -5,23 +5,24 @@ namespace CRC\Interstellar;
 final class Universe
 {
     // Things to change to make debugging easier...
-    private $universeRadius     = 2000; // make this smaller and you'll likely get a much faster run-time.
-    private $asteroidsOff       = true;  // turn off asteroids.
+    private $universeRadius     = 2000;  // make this smaller and you'll likely get a much faster run-time.
+    private $asteroidsOff       = false; // turn off asteroids.
     private $asteroidDensity    = 350;   // NB: It's the reciporal, i.e., one asteroid per 350 3d grid cells.
     private $wormholeSpawnLimit = 50;    // the number of wormholes that will spawn in the universe
     private $gasCloudsLimit     = 100;   // the number of gas clouds to spawn
-    private $universeRunTime    = 30;   // run time in seconds
+    private $universeRunTime    = 300;   // run time in seconds
 
     // change stuff below here and you'll probably break something.
     private $spaceShip = null;
     private $home      = null;
+    private $startTime = null;
     private $asteroids = array();
     private $wormholes = array();
     private $gasClouds = array();
+    
     private $asteroidScanningRange = 6;
     private $asteroidPreloadRange  = 10;
     private $asteroidUnloadRange   = 50;
-    private $startTime             = null;
     
     public function __construct($shipClass = "\Ship")
     {
@@ -118,7 +119,7 @@ final class Universe
         // check if we're within time
         if (gettimeofday(true) > $this->startTime + $this->universeRunTime) {
             echo "Time's up.\r\n";
-            echo "Your ".$this->spaceShip->getCargo()." units of cargo were delivered late. Penalty of 500 credits per sale.";
+            echo "Your ".$this->spaceShip->getCargo()." units of cargo were sold remotely for 500 credits each.\r\n";
             $this->spaceShip->sellCargo();
             echo "Your balance is ".$this->spaceShip->getBalance()." credits.";
             exit();
