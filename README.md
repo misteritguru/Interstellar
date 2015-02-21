@@ -25,7 +25,7 @@ The winner will receive a Raspberry Pi kit.
 * Asteroids move at up to 2 spacial units on the X, Y and Z axis per update. If you collide with an asteroid, your
 ship will be destroyed.
 * There are several wormholes dotted throughout the system, you will only know the location of the closest side of
-each wormhole to your ship when you scan. Each wormhole has a signature which is its exit point as a SHA256 sum (see
+each wormhole to your ship when you scan. Each wormhole has a signature which is its exit point as a SHA1 sum (see
 `\CRC\Interstellar\Wormhole` and `\CRC\Interstellar\Universe` for more details). If you collide with one side of a
 wormhole, you will be transported to the other side.
 * Whenever your mining drone makes contact with a gas cloud, it will harvest a unit of gas into its cargo.
