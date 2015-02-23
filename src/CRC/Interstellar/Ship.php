@@ -20,6 +20,9 @@ abstract class Ship
     protected $authorName  = null;
     protected $authorEmail = null;
 
+    // Leaving this here for legacy reasons.
+    protected $autherEmail = null;
+
     public abstract function navigate();
 
     final public function __construct($x, $y, $z, Universe $universe, Planet $home)
@@ -29,6 +32,12 @@ abstract class Ship
         $this->currentZ = $z;
         $this->universe = $universe;
         $this->home     = $home;
+
+        // In case anyone kept the misspelled variable name.
+        if (null !== $this->autherEmail) {
+            $this->authorEmail = $this->autherEmail;
+        }
+
         $this->init();
     }
 
