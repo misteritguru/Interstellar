@@ -5,7 +5,7 @@
 You have been hired by the Interstellar Mining Corporation to program their latest batch of gas-mining drones.
 You will need to scan for gas clouds, seek them out, harvest the gases, sell the harvest and keep clear of asteroids.
 Did we mention the drones only have a limited battery life?
-The programmer whos drones harvest the most gas within a single charge of the battery will win.
+The programmer whose drones harvest the most gas within a single charge of the battery will win.
 
 ## The Prize ##
 
