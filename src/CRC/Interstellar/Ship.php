@@ -18,7 +18,7 @@ abstract class Ship
     
     // information about the ship's programmer
     protected $authorName  = null;
-    protected $autherEmail = null;
+    protected $authorEmail = null;
 
     public abstract function navigate();
 
