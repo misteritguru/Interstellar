@@ -5,7 +5,7 @@ namespace Demo;
 class Ship extends \CRC\Interstellar\Ship
 {
     protected $authorName  = "JoinCRC Team";
-    protected $autherEmail = "php@joincrc.com";
+    protected $authorEmail = "php@joincrc.com";
     
     protected function init()
     {
