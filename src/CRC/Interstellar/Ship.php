@@ -123,7 +123,7 @@ abstract class Ship
         }
     }
     
-    public function sellCargo()
+    final public function sellCargo()
     {
         if ($this->currentX == $this->home->getX() &&
             $this->currentY == $this->home->getY() &&
