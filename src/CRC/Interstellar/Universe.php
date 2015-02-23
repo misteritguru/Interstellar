@@ -241,7 +241,7 @@ final class Universe
                 );
             }
         }
-        // now return the relative location of all of the gas clouds
+        // now return the absolute location of all of the gas clouds
         foreach($this->gasClouds as $gasCloud) {
             $result['gasclouds'][] = array(
                 'x' => $gasCloud->getX(),
