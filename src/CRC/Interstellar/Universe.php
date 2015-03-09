@@ -2,7 +2,7 @@
 
 namespace CRC\Interstellar;
 
-final class Universe
+class Universe
 {
     // Things to change to make debugging easier...
     private $universeRadius     = 2000;  // make this smaller and you'll likely get a much faster run-time.

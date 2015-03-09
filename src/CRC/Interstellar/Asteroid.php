@@ -2,7 +2,7 @@
 
 namespace CRC\Interstellar;
 
-final class Asteroid
+class Asteroid
 {
     private $x;
     private $y;

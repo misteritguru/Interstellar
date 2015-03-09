@@ -2,7 +2,7 @@
 
 namespace CRC\Interstellar;
 
-final class Planet
+class Planet
 {
     private $x;
     private $y;

@@ -2,7 +2,7 @@
 
 namespace CRC\Interstellar;
 
-final class Wormhole
+class Wormhole
 {
     private $x1;
     private $y1;

@@ -2,7 +2,7 @@
 
 namespace CRC\Interstellar;
 
-final class GasCloud
+class GasCloud
 {
     private $x;
     private $y;
